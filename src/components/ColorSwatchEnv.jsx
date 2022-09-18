@@ -1,19 +1,17 @@
-import { IconButton } from "@mui/material"
 import Swatch from "./Swatch"
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
-import { atom, useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { swatchesState } from "../atoms/atoms";
 
 const ColorSwatchEnv = () => {
 
-  //const swatches =  useRecoilValue(swatchesState)
   const [swatches, setSwatches] = useRecoilState(swatchesState);
 
   const handleAddColor = () => {
     setSwatches((oldSwatches) => [...oldSwatches,
       {
-        id: oldSwatches.length +1, 
+        id: oldSwatches.length + 1,
         color: '#e3e3e3',
         texture: null,
         specularity: null,
@@ -33,13 +31,11 @@ const ColorSwatchEnv = () => {
 
 
         <div style={{ width: '5rem', height: '5rem', textAlign: 'center', marginTop: '0.8rem', zIndex: '1 !important' }}>
-          <Fab color="primary" size="medium" aria-label="add" onClick={handleAddColor} sx={{zIndex: 1}}>
+          <Fab color="primary" size="medium" aria-label="add" onClick={handleAddColor} sx={{ zIndex: 1 }}>
             <AddIcon />
           </Fab>
         </div>
-
       </div>
-
     </div>
   )
 }

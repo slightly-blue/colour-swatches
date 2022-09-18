@@ -1,11 +1,11 @@
 
-import {atom} from "recoil";
+import { atom } from "recoil";
 
 export const swatchesState = atom({
   key: 'Swatches',
   default: [
     {
-      id: 0, // or location?
+      id: 0,
       color: '#e3e3e3',
       texture: null,
       specularity: null,

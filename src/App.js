@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ColorSwatchEnv from './components/ColorSwatchEnv';
 import ColorTestEnv from './components/ColorTestEnv';
-import { atom } from 'recoil';
 import ColorPicker from './components/ColorPicker';
 
 function App() {
@@ -14,14 +13,14 @@ function App() {
   //     testLight: null,
   //   },
   // });
-  
+
   return (
     <div className="App" >
       <div style={{ display: 'flex', flexDirection: 'row' }} >
         <ColorSwatchEnv />
         <ColorTestEnv />
       </div>
-      {/* <ColorPicker /> */}
+      <ColorPicker />
     </div>
   );
 }

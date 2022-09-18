@@ -6,7 +6,7 @@ import { useEffect, useCallback, useState } from "react";
 
 const useContextMenu = () => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
-  const [target, setTarget] = useState({ x: 0, y: 0 });
+  const [target, setTarget] = useState({});
   const [show, setShow] = useState(false);
 
   const handleContextMenu = useCallback(
@@ -14,12 +14,16 @@ const useContextMenu = () => {
       event.preventDefault();
       setAnchorPoint({ x: event.pageX, y: event.pageY });
       setShow(true);
-      setTarget(event.currentTarget)
+      setTarget(event.target)
     },
-    [setShow, setAnchorPoint,setTarget]
+    [setShow, setAnchorPoint, setTarget]
   );
 
-  const handleClick = useCallback(() => (show ? setShow(false) : null), [show]);
+  const handleClick = useCallback((e) => {
+    if (!document.getElementById("context-menu")?.contains(e.target) && show) {
+      setShow(false)
+    }
+  }, [show]);
 
   useEffect(() => {
     document.addEventListener("click", handleClick);
