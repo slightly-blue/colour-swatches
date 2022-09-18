@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  /* visibility: hidden; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(45 45 45);
+  /* visibility: hidden; */
+  border-radius: 2px;
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  width: 5px;
+  height: 5px;
+  background-color: #9fc1ff;
+  transition: 250ms;
+}
+
+.gatsby-highlight:hover>pre::-webkit-scrollbar-thumb {
+  transition: 250ms;
+  visibility: visible;
+  background-color: #9fc1ff;
+  transition: 250ms;
+
+}

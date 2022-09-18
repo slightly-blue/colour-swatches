@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App" >
-      <div style={{ display: 'flex', flexDirection: 'row' }} >
+      <div style={{ display: 'flex', flexDirection: 'row', height: '100%', width: '100%' }} >
         <ColorSwatchEnv />
         <ColorTestEnv />
       </div>
